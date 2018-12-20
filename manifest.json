@@ -1,0 +1,15 @@
+{
+    "name": "Try to Break Totti",
+    "short_name": "BreakTotti",
+    "icons": [
+        {
+            "src": "/images/",
+            "type": "image/png",
+            "sizes": "x"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#",
+    "theme_color": "#"
+}

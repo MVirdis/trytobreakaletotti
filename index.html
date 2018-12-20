@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- (1) -->
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <link rel="manifest" href="manifest.json" />
+        <!--------->
+        <title>Try to Break Totti - Team Totti</title>
+        <!-- (2) -->
+        <script>
+            if ('serviceWorker' in navigator) { // if browser supports
+                navigator.serviceWorker.register("./sw.js").then((response)=>{
+                    console.log("Service worker successfully installed.");
+                    console.log("Scope of service worker: " + response.scope);
+                }).catch((error) => {
+                    console.log("Error installing service worker");
+                });
+            } else {
+                console.log("Unsupported service workers");
+            }
+        </script>
+        <!--------->
+        <!-- (3) -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!--------->
+    </head>
+    <body>
+        <div id="card">
+            <p>{{ name }}</p>
+        </div>
+        <!-- (4) -->
+        <script src="./scripts/app.js"></script>
+        <!--------->
+    </body>
+<!--
+    Space for comments:
+(1): This two tags are needed in order to display this page as an app.
+     The meta tag tells the browser to lock the page width and height to
+     device's screen sizes, this ensures that the page will fit exactly and not
+     scroll.
+     The link tag simply tells the browser where the manifest file is located in
+     the project folder.
+(2): This script registers the service worker that will handle this application.
+     The service worker is a piece of javascript code that executes in
+     background on the browser. It can handle page, resource requests and
+     manages the cache.
+(3): This script adds the VueJS framework to the app.
+(4): This script exposes various functions and objects to retrieve data. See
+     that file for more information.
+-->
+</html>
