@@ -9,8 +9,10 @@
 **      * place: where it will be(or has been) disputed
 **      To use this data (for example in index.html) iterate over the matches
 **      array from an element with id match_container (IMPORTANT), for example:
-**      <div id="match_container" v-for="match in matches">
-**          <h2>The challenger is: {{ match.challenger }}</h2>
+**      <div id="match_container">
+**          <div v-for="match in matches">
+**            <h2>The challenger is: {{ match.challenger }}</h2>
+**          </div>
 **      </div>
 **      Use this syntax to put a placeholder for values: {{ variable }}.
 */
