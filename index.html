@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <!-- (1) -->
-        <meta name="viewport" content="width=device-width, user-scalable=no" />
-        <link rel="manifest" href="manifest.json" />
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/style.css"/>
-        <!--------->
-        <title>Try to Break Ale Totti - Team Totti</title>
-        <!-- (2) -->
-        <script>
-            if ('serviceWorker' in navigator) { // if browser supports
-                navigator.serviceWorker.register("./sw.js").then((response)=>{
-                    console.log("Service worker successfully installed.");
-                    console.log("Scope of service worker: " + response.scope);
-                }).catch((error) => {
-                    console.log("Error installing service worker");
-                });
-            } else {
-                console.log("Unsupported service workers");
-            }
-        </script>
-        <!--------->
-        <!-- (3) -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <!--------->
-    </head>
-    <body>
-      <div id="main_container">
+<head>
+    <meta charset="utf-8">
+    <!-- (1) -->
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--------->
+    <title>Try to Break Ale Totti - Team Totti</title>
+    <!-- (2) -->
+    <script>
+    if ('serviceWorker' in navigator) { // if browser supports
+        navigator.serviceWorker.register("./sw.js").then((response)=>{
+            console.log("Service worker successfully installed.");
+            console.log("Scope of service worker: " + response.scope);
+        }).catch((error) => {
+            console.log("Error installing service worker");
+        });
+    } else {
+        console.log("Unsupported service workers");
+    }
+    </script>
+    <!--------->
+    <!-- (3) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--------->
+</head>
+<body>
+    <div id="main_container">
         <div id="container_ale">
         </div>
         <h1>Prossimo Scontro:</h1>
         <h1>V <span class="smaller">giorni</span> III <span class="smaller">ore</span> X <span class="smaller">minuti</span></h1>
         <div id="prenotazione_incontro">
-          <input id="nome_combattente" type="text" placeholder="Nome combattente..."></input>
+            <input id="nome_combattente" type="text" placeholder="Nome combattente..."></input>
         </div>
-      </div>
+    </div>
 
 
-      <!-- (4) -->
-      <script src="./scripts/app.js"></script>
-      <!--------->
-    </body>
+    <!-- (4) -->
+    <script src="./scripts/app.js"></script>
+    <!--------->
+</body>
 <!--
     Space for comments:
 (1): This two tags are needed in order to display this page as an app.
