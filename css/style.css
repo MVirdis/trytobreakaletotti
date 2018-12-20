@@ -17,11 +17,17 @@ input{
   margin-bottom: 5px;
   font-family: "Times New Roman";
   font-size: 16px;
+  outline: 0!important;
 }
 
 button{
     font-family: "Times New Roman";
     font-size: 16px;
+    outline: 0;
+}
+
+button:hover{
+
 }
 
 /* Classi */
@@ -52,7 +58,7 @@ button{
 
 #prenotazione_incontro{
     width:300px;
-    height:300px;
+    height:350px;
     margin: 20px auto;
 }
 
@@ -96,6 +102,15 @@ button{
     background-color: #5e5e5e;
     border-radius: 10px;
     border: 0;
+    color: white;
+    cursor: pointer;
+}
+
+#prenotazione_incontro a{
+    text-decoration: none;
+    color: #5e5e5e;
+    margin-left: 120px;
+    padding-top: 50px;
 }
 
 /* ALTRO */
