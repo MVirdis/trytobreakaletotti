@@ -24,6 +24,12 @@ const matches = new Vue({
                 date: "2019-03-01",
                 time: "11:00",
                 place: "Polo F aula F9"
+            },
+            {
+                challenger: "il Barbiere",
+                date: "2019-03-15",
+                time: "16:00",
+                place: "Polo B aula B31"
             }
         ]
     }
