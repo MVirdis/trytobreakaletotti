@@ -26,9 +26,7 @@ button{
     outline: 0;
 }
 
-button:hover{
 
-}
 
 /* Classi */
 
@@ -107,11 +105,21 @@ button:hover{
     margin-bottom: 10px;
 }
 
+#invia_richiesta:hover{
+    background-color: #4f4f4f;
+}
+
 #prenotazione_incontro a{
     text-decoration: none;
     color: #5e5e5e;
     display: block;
     text-align: center;
+    width: 55px;
+    margin: 0 auto;
+}
+
+#prenotazione_incontro a:hover{
+    color: #6e6e6e;
 }
 
 /* ALTRO */
