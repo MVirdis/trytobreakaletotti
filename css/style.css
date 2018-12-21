@@ -110,7 +110,7 @@ button{
 }
 
 #prenotazione_incontro a{
-    text-decoration: none;
+    text-decoration: underline;
     color: #5e5e5e;
     display: block;
     text-align: center;
