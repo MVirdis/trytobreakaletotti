@@ -58,7 +58,7 @@ button:hover{
 
 #prenotazione_incontro{
     width:300px;
-    height:350px;
+    height:250px;
     margin: 20px auto;
 }
 
@@ -104,13 +104,14 @@ button:hover{
     border: 0;
     color: white;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 #prenotazione_incontro a{
     text-decoration: none;
     color: #5e5e5e;
-    margin-left: 120px;
-    padding-top: 50px;
+    display: block;
+    text-align: center;
 }
 
 /* ALTRO */
