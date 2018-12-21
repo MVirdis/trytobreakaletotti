@@ -58,7 +58,10 @@ button{
     width:300px;
     height:250px;
     margin: 20px auto;
+    visibility: hidden;
 }
+
+
 
 #nome_combattente{
     width: 300px;
@@ -105,6 +108,22 @@ button{
     margin-bottom: 10px;
 }
 
+#prenota{
+    width: 300px;
+    height: 40px;
+    background-color: #5e5e5e;
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+    visibility: visible;
+}
+
+#prenota:hover{
+    background-color: #4f4f4f;
+}
+
 #invia_richiesta:hover{
     background-color: #4f4f4f;
 }
@@ -116,6 +135,7 @@ button{
     text-align: center;
     width: 55px;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 #prenotazione_incontro a:hover{
