@@ -5,6 +5,7 @@ function hide(){
     blocco.style.margin = "20px auto";
     pulsante_mostra.style.visibility = "visible";
     pulsante_mostra.style.height = "40px";
+    blocco.style.height = "40px";
 }
 
 function show(){
@@ -14,4 +15,5 @@ function show(){
     blocco.style.margin = "0 auto";
     pulsante_mostra.style.visibility = "hidden";
     pulsante_mostra.style.height = "0";
+    blocco.style.height = "250px";
 }

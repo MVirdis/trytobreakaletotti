@@ -43,6 +43,18 @@
             <button id="invia_richiesta" type="submit">Invia Richiesta</button>
             <a id="annulla" onclick="hide();">Annulla</a>
         </div>
+        <hr>
+        <!-- (5) -->
+        <div id="match_container">
+            <div class="scontro" v-for="match in matches">
+                <h2>Ale Totti <span class="versus">vs</span> {{match.challenger}} </h2>
+                <h3 class="versus">Da combattersi il giorno:</h3>
+                <h3>{{match.date}} <span class="versus">alle ore</span> {{match.time}} </h3>
+                <h3>{{match.place}}</h3>
+                <img src="./img/Vertical_line.png" width="100px" height="100px" style="margin:20px auto; display:block;">
+            </div>
+        </div>
+
     </div>
 
 
@@ -65,6 +77,7 @@
      manages the cache.
 (3): This script adds the VueJS framework to the app.
 (4): This script exposes various functions and objects to retrieve data. See
-     that file for more information.
+     that file for more information
+(5): Space for all the future and past matches
 -->
 </html>

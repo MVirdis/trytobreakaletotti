@@ -10,6 +10,18 @@ h1{
     margin-top: 10px;
 }
 
+h2{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+h3{
+    text-align: center;
+    color: white;
+    font-size: 28px;
+}
+
 input{
   padding: 0;
   border-width: 0;
@@ -40,6 +52,16 @@ button{
     clear: both;
 }
 
+.versus{
+    color: grey;
+    font-size: 25px;
+}
+
+.scontro{
+    margin-bottom: 30px;
+}
+
+
 /* IDS */
 #main_container{
     width: 960px;
@@ -56,7 +78,7 @@ button{
 
 #prenotazione_incontro{
     width:300px;
-    height:250px;
+    height:40px;
     margin: 20px auto;
     visibility: hidden;
 }
