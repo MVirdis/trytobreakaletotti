@@ -7,31 +7,17 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css"/>
-    <!--------->
     <title>Try to Break Ale Totti - Team Totti</title>
     <!-- (2) -->
-    <script>
-    if ('serviceWorker' in navigator) { // if browser supports
-        navigator.serviceWorker.register("./sw.js").then((response)=>{
-            console.log("Service worker successfully installed.");
-            console.log("Scope of service worker: " + response.scope);
-        }).catch((error) => {
-            console.log("Error installing service worker");
-        });
-    } else {
-        console.log("Unsupported service workers");
-    }
-    </script>
-    <!--------->
+    <script src="./sw.js"></script>
     <!-- (3) -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!--------->
 </head>
 <body>
     <div id="main_container">
         <div id="container_ale">
         </div>
-        <h1>Prossimo Scontro:</h1>
+        <h1>Prossimo Scontro</h1>
         <h1>V <span class="smaller">giorni</span> III <span class="smaller">ore</span> X <span class="smaller">minuti</span></h1>
         <div id="prenotazione_incontro">
             <button id="prenota" type="submit" onclick="show();">Prenota il tuo incontro</button>
@@ -54,14 +40,10 @@
                 <img src="./img/Vertical_line.png" width="100px" height="100px" style="margin:20px auto; display:block;">
             </div>
         </div>
-
     </div>
-
-
     <!-- (4) -->
     <script src="./scripts/app.js"></script>
     <script src="./scripts/stylescripts.js"></script>
-    <!--------->
 </body>
 <!--
     Space for comments:
