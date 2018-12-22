@@ -68,6 +68,10 @@ button{
     margin-bottom: 30px;
 }
 
+.disabled{
+    /* TODO: insert button style when disabled */
+}
+
 .footer_text{
     font-size: 17px;
     line-height: 90px;
