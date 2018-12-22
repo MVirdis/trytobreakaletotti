@@ -16,37 +16,38 @@
 **      </div>
 **      Use this syntax to put a placeholder for values: {{ variable }}.
 */
+var postRequestSettings = {
+    mode: 'no-cors',
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+};
+
 const matches = new Vue({
     el: "#match_container",
     data: {
-        matches: [
-            {
-                challenger: "il Guggio",
-                date: "2019-03-01",
-                time: "11:00",
-                place: "Polo F aula F9"
-            },
-            {
-                challenger: "il Barbiere",
-                date: "2019-03-15",
-                time: "16:00",
-                place: "Polo B aula B31"
-            }
-        ]
+        matches: []
     }
 });
 
+(function() { // On start fetch upcoming challenges
+    postRequestSettings.body = 'action=get&target=challenge&upcoming=true';
+    fetch("/php/request-handler.php", postRequestSettings).then(
+    function(response) {
+        response.json().then(function(obj) {
+            console.log(obj);
+            matches.matches = obj.data;
+        });
+    });
+})();
+
 document.getElementById("invia_richiesta").addEventListener("click", function(){
-    fetch("/php/request-handler.php", {
-        mode: "no-cors",
-        method: "POST",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: "action=set&target=request&name="+nome+"&challenger="+
-            nomeCombattente+"&surname="+cognome+"&mail="+mail
-    }).then(function(response) {
+    postRequestSettings.body = "action=set&target=request&name="+nome+
+        "&challenger="+nomeCombattente+"&surname="+cognome+"&mail="+mail;
+    fetch("/php/request-handler.php", postRequestSettings).then(
+    function(response) {
         console.log(response.json());
         hide();
         pulsantePrenota.innerHTML = "Richiesta inviata";

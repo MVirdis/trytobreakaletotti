@@ -43,6 +43,36 @@ EOT;
         send();
     }
 
+    if ($_POST['action'] == 'get' && $_POST['target'] == 'challenge') {
+        if (!isset($_POST['upcoming'])) {
+            $response->message = "Error: missing upcoming parameter.";
+            send();
+        }
+        $cmp = "";
+        if ($_POST['upcoming'] == 'true')
+            $query = <<<EOT
+            SELECT *
+            FROM challenge C
+            WHERE C.date > CURRENT_DATE OR
+                (C.date = CURRENT_DATE AND C.time >= CURRENT_TIME);
+EOT;
+        else
+            $query = <<<EOT
+            SELECT *
+            FROM challenge C;
+EOT;
+        $result = $dbmanager->performQuery($query);
+        $dbmanager->closeConnection();
+        $response->responseCode = 1;
+        $response->message = "Successfully retrieved data";
+        $i = 0;
+		while($row = $result->fetch_assoc()) {
+			$response->data[$i] = $row;
+			$i = $i+1;
+		}
+        send();
+    }
+
 /*
 (1): If the type parameter of the POST request is not specified return a default
      response (an error)
