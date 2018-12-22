@@ -50,7 +50,7 @@ document.getElementById("invia_richiesta").addEventListener("click", function(){
         console.log(response.json());
         hide();
         pulsantePrenota.innerHTML = "Richiesta inviata";
-        pulsantePrenota.setAttribute('class', 'disabled');
         pulsantePrenota.disabled = true;
+        // TODO: set here style of pulsantePrenota when disabled
     });
 });

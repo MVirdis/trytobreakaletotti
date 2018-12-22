@@ -3,8 +3,8 @@
 ***
 ### Graphic part
 * **Add theme and bg colours to manifest.json**
-* **Add css style for disabled button**: class .disabled already present, search
-    for it
+* **Add css style for disabled button**: search TODO in app.js for where to set
+    the style
 ***
 ### JS Core part
 * **Add caching of application shell on install**
