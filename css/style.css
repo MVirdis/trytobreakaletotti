@@ -200,6 +200,8 @@ button{
 
 #past_matches_button:hover{
     background-position: 0 54px;
+    height: 54px;
+    width: 54px;
 }
 
 /* ALTRO */
