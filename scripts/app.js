@@ -16,7 +16,6 @@
 **      </div>
 **      Use this syntax to put a placeholder for values: {{ variable }}.
 */
-
 const matches = new Vue({
     el: "#match_container",
     data: {
@@ -35,4 +34,23 @@ const matches = new Vue({
             }
         ]
     }
+});
+
+document.getElementById("invia_richiesta").addEventListener("click", function(){
+    fetch("/php/request-handler.php", {
+        mode: "no-cors",
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "action=set&target=request&name="+nome+"&challenger="+
+            nomeCombattente+"&surname="+cognome+"&mail="+mail
+    }).then(function(response) {
+        console.log(response.json());
+        hide();
+        pulsantePrenota.innerHTML = "Richiesta inviata";
+        pulsantePrenota.setAttribute('class', 'disabled');
+        pulsantePrenota.disabled = true;
+    });
 });
