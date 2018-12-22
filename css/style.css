@@ -62,7 +62,7 @@ button{
 }
 
 .footer_text{
-    font-size: 20px;
+    font-size: 17px;
     line-height: 150px;
     color: grey;
 }
@@ -171,7 +171,7 @@ button{
 #footer{
     width: 100%;
     height: 150px;
-    background: radial-gradient(ellipse at top, #0b0b0b,#252525);
+    background: radial-gradient(ellipse at top, #010101, #252525);
     box-shadow: inset 0 15px 30px #000;
 }
 
