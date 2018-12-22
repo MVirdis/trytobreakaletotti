@@ -1,6 +1,6 @@
 <?php
 
-require 'configurationDB.php';
+require 'db-configuration.php';
 
 $dbmanager = new DBManager();
 
