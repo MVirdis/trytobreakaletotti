@@ -154,6 +154,12 @@ button{
     background-color: #4f4f4f;
 }
 
+#prenota:disabled{
+    background-color: #3f3f3f;
+    color: #2f2f2f;
+    cursor: not-allowed;
+}
+
 #invia_richiesta:hover{
     background-color: #4f4f4f;
 }
