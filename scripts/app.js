@@ -43,7 +43,16 @@ const matches = new Vue({
     });
 })();
 
-document.getElementById("invia_richiesta").addEventListener("click", function(){
+var correctFormFlag = false;
+function formCheck() {
+    correctFormFlag = true;
+    requestFields.forEach(function(element){
+        if (/^\s*$/.test(element.value))
+            correctFormFlag = false;
+    });
+}
+
+function sendForm() {
     postRequestSettings.body = "action=set&target=request&name="+nome.value+
         "&challenger="+nomeCombattente.value+"&surname="+cognome.value+
         "&mail="+mail.value;
@@ -53,5 +62,12 @@ document.getElementById("invia_richiesta").addEventListener("click", function(){
         hide();
         pulsantePrenota.innerHTML = "Richiesta inviata";
         pulsantePrenota.disabled = true;
+        correctFormFlag = false;
     });
+}
+
+document.getElementById("invia_richiesta").addEventListener("click", function(){
+    formCheck();
+    if (correctFormFlag)
+        sendForm();
 });
