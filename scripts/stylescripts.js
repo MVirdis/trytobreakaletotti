@@ -19,6 +19,7 @@ function hide() {
     requestFields.forEach(function(field) { // Resets all input fields
         field.value = "";
     });
+    errorText.style.visibility = "hidden";
 }
 
 function show() {

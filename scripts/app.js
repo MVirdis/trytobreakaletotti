@@ -66,6 +66,7 @@ function sendForm() {
         pulsantePrenota.innerHTML = "Richiesta inviata";
         pulsantePrenota.disabled = true;
         correctFormFlag = false;
+    }).finally(function() {
         errorText.style.visibility = "hidden";
     });
 }
