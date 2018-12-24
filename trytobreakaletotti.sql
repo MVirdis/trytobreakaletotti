@@ -34,7 +34,7 @@ CREATE TABLE `challenge` (
   `time` time NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `challenger` (`challenger`,`date`,`time`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `challenge` (
 
 LOCK TABLES `challenge` WRITE;
 /*!40000 ALTER TABLE `challenge` DISABLE KEYS */;
+INSERT INTO `challenge` VALUES (1,'il Guggio','Polo F aula F9','2019-03-01','11:00:00'),(2,'il Barbiere','Polo B aula B31','2019-03-26','13:00:00');
 /*!40000 ALTER TABLE `challenge` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,4 +82,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-20 22:41:06
+-- Dump completed on 2018-12-24 15:03:50
