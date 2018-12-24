@@ -49,7 +49,7 @@ function formCheck() {
     requestFields.forEach(function(element){
         if (/^\s*$/.test(element.value)) {
             correctFormFlag = false;
-            errorText.innerHTML = "Errore il campo "+element.getAttribute('id')+
+            errorText.innerHTML = "Errore: il campo "+element.getAttribute('id')+
                 " è vuoto";
         }
     });

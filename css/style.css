@@ -72,6 +72,8 @@ button{
     color: #eaeaea;
     text-shadow: 1px 1px rgba(10, 10, 10, 0.6);
 }
+
+
 /* IDS */
 #main_container{
     width: 960px;
@@ -205,7 +207,9 @@ button{
 
 #request_error_text {
     visibility: hidden;
-    color: red;
+    color: #ac2d06;
+    text-align: center;
+    margin-bottom: 5px;
 }
 
 /* ALTRO */
