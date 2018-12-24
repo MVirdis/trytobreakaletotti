@@ -16,6 +16,7 @@ function hide() {
     pulsantePrenota.style.visibility = "visible";
     pulsantePrenota.style.height = "40px";
     blocco.style.height = "40px";
+    errorText.style.visibility = "hidden";
     requestFields.forEach(function(field) { // Resets all input fields
         field.value = "";
     });
