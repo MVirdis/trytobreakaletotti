@@ -47,8 +47,11 @@ var correctFormFlag = false;
 function formCheck() {
     correctFormFlag = true;
     requestFields.forEach(function(element){
-        if (/^\s*$/.test(element.value))
+        if (/^\s*$/.test(element.value)) {
             correctFormFlag = false;
+            errorText.innerHTML = "Errore il campo "+element.getAttribute('id')+
+                " è vuoto";
+        }
     });
 }
 
@@ -63,6 +66,7 @@ function sendForm() {
         pulsantePrenota.innerHTML = "Richiesta inviata";
         pulsantePrenota.disabled = true;
         correctFormFlag = false;
+        errorText.style.visibility = "hidden";
     });
 }
 
@@ -70,4 +74,6 @@ document.getElementById("invia_richiesta").addEventListener("click", function(){
     formCheck();
     if (correctFormFlag)
         sendForm();
+    else
+        errorText.style.visibility = "visible";
 });

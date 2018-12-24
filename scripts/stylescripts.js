@@ -8,6 +8,8 @@ var mail = document.getElementById('mail');
 
 var requestFields = [nomeCombattente, nome, cognome, mail];
 
+var errorText = document.getElementById('request_error_text');
+
 function hide() {
     blocco.style.visibility = "hidden";
     blocco.style.margin = "20px auto";

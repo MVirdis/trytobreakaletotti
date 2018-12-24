@@ -203,6 +203,11 @@ button{
     width: 54px;
 }
 
+#request_error_text {
+    visibility: hidden;
+    color: red;
+}
+
 /* ALTRO */
 
 ::placeholder{
