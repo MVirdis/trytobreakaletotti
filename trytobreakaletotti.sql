@@ -32,9 +32,10 @@ CREATE TABLE `challenge` (
   `place` varchar(100) COLLATE latin1_general_ci NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
+  `result` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `challenger` (`challenger`,`date`,`time`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +44,7 @@ CREATE TABLE `challenge` (
 
 LOCK TABLES `challenge` WRITE;
 /*!40000 ALTER TABLE `challenge` DISABLE KEYS */;
-INSERT INTO `challenge` VALUES (1,'il Guggio','Polo F aula F9','2019-03-01','11:00:00'),(2,'il Barbiere','Polo B aula B31','2019-03-26','13:00:00');
+INSERT INTO `challenge` VALUES (1,'il Guggio','Polo F aula F9','2019-03-01','11:00:00',NULL),(2,'il Barbiere','Polo B aula B31','2019-03-26','13:00:00',NULL),(3,'il Puttana','Polo F aula F7','2018-11-13','21:24:00',1);
 /*!40000 ALTER TABLE `challenge` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,4 +83,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-24 15:03:50
+-- Dump completed on 2018-12-24 16:06:44
