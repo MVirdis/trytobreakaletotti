@@ -16,6 +16,11 @@
 **      </div>
 **      Use this syntax to put a placeholder for values: {{ variable }}.
 */
+const ALEWIN = 1;
+const DRAW = 0;
+const CHALLENGERWIN = 2;
+const REQUESTURL = "http://localhost/php/request-handler.php";
+
 var postRequestSettings = {
     mode: 'no-cors',
     method: 'POST',
@@ -34,7 +39,7 @@ const matches = new Vue({
 
 (function() { // On start fetch upcoming challenges
     postRequestSettings.body = 'action=get&target=challenge&upcoming=true';
-    fetch("/php/request-handler.php", postRequestSettings).then(
+    fetch(REQUESTURL, postRequestSettings).then(
     function(response) {
         response.json().then(function(obj) {
             console.log(obj);
@@ -59,7 +64,7 @@ function sendForm() {
     postRequestSettings.body = "action=set&target=request&name="+nome.value+
         "&challenger="+nomeCombattente.value+"&surname="+cognome.value+
         "&mail="+mail.value;
-    fetch("/php/request-handler.php", postRequestSettings).then(
+    fetch(REQUESTURL, postRequestSettings).then(
     function(response) {
         console.log(response.json());
         hide();
@@ -77,4 +82,20 @@ document.getElementById("invia_richiesta").addEventListener("click", function(){
         sendForm();
     else
         errorText.style.visibility = "visible";
+});
+
+var showingPastMatches = false;
+document.getElementById("past_matches_button").addEventListener("click",function(){
+    postRequestSettings.body = 'action=get&target=challenge&upcoming=' +
+        (showingPastMatches ? 'true' : 'false');
+    fetch(REQUESTURL, postRequestSettings).then(
+    function(response) {
+        response.json().then(function(obj) {
+            console.log(obj);
+            matches.matches = obj.data;
+        });
+    });
+    document.getElementById("past_matches_label").innerHTML =
+        (showingPastMatches ? "Mostra " : "Nascondi ") + "incontri passati";
+    showingPastMatches = !showingPastMatches;
 });

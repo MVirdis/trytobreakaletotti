@@ -35,17 +35,16 @@
         <div id="match_container">
             <div class="scontro" v-for="match in matches">
                 <h2>Ale Totti <span class="versus">vs</span> {{match.challenger}} </h2>
-                <h3 class="versus">Da combattersi il giorno:</h3>
+                <h3 class="versus" v-if="match.result == null">Da combattersi il giorno:</h3>
+                <h3 class="versus" v-else>Combattuto il giorno:</h3>
                 <h3>{{match.date}} <span class="versus">alle ore</span> {{match.time}} </h3>
                 <h3>{{match.place}}</h3>
                 <img src="./img/Vertical_line.png" width="100px" height="100px" style="margin:20px auto; display:block;">
             </div>
         </div>
-        <div id="past_matches_button" onclick=""></div>
-        <h4>Mostra incontri passati</h4>
-
         <!-- (6) -->
-
+        <div id="past_matches_button"></div>
+        <h4 id="past_matches_label">Mostra incontri passati</h4>
     </div>
     <!-- (7) -->
     <div id="footer">
