@@ -95,7 +95,7 @@ document.getElementById("past_matches_button").addEventListener("click",function
             matches.matches = obj.data;
         });
     });
-    document.getElementById("past_matches_label").innerHTML = "Nascondi " +
-    "incontri passati";
+    document.getElementById("past_matches_label").innerHTML =
+        (showingPastMatches ? "Mostra " : "Nascondi ") + "incontri passati";
     showingPastMatches = !showingPastMatches;
 });
