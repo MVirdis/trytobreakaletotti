@@ -44,8 +44,9 @@ const matches = new Vue({
 })();
 
 document.getElementById("invia_richiesta").addEventListener("click", function(){
-    postRequestSettings.body = "action=set&target=request&name="+nome+
-        "&challenger="+nomeCombattente+"&surname="+cognome+"&mail="+mail;
+    postRequestSettings.body = "action=set&target=request&name="+nome.value+
+        "&challenger="+nomeCombattente.value+"&surname="+cognome.value+
+        "&mail="+mail.value;
     fetch("/php/request-handler.php", postRequestSettings).then(
     function(response) {
         console.log(response.json());
