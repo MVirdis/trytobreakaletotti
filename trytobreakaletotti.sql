@@ -35,7 +35,7 @@ CREATE TABLE `challenge` (
   `result` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `challenger` (`challenger`,`date`,`time`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `challenge` (
 
 LOCK TABLES `challenge` WRITE;
 /*!40000 ALTER TABLE `challenge` DISABLE KEYS */;
-INSERT INTO `challenge` VALUES (1,'il Guggio','Polo F aula F9','2019-03-01','11:00:00',NULL),(2,'il Barbiere','Polo B aula B31','2019-03-26','13:00:00',NULL),(3,'il Puttana','Polo F aula F7','2018-11-13','21:24:00',1);
+INSERT INTO `challenge` VALUES (1,'il Guggio','Polo F aula F9','2019-03-01','11:00:00',NULL),(2,'il Barbiere','Polo B aula B31','2019-03-26','13:00:00',NULL),(3,'Metropolitan Underground','Polo F aula F3','2018-10-25','22:32:00',1),(4,'il Puttana','Polo F aula F3','2018-10-25','22:39:00',1),(5,'il Ragioniere','Polo F aula F3','2018-10-25','22:45:00',1),(6,'myGazza','Polo F aula F5','2018-10-26','08:30:00',1),(7,'Johnny Sins','Polo F aula F5','2018-10-26','10:30:00',1),(8,'Xifrajkiji (forma finale)','Polo F aula F5','2018-10-26','10:35:00',1),(9,'il Guggio','Polo F aula F5','2018-10-26','10:40:00',2);
 /*!40000 ALTER TABLE `challenge` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,4 +83,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-24 16:06:44
+-- Dump completed on 2018-12-27 19:48:53
