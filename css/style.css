@@ -74,6 +74,13 @@ button{
     text-shadow: 1px 1px rgba(10, 10, 10, 0.6);
 }
 
+.striked {
+    color: red !important;
+}
+
+.green {
+    color: green !important;
+}
 
 /* IDS */
 #main_container{

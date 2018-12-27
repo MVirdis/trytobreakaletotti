@@ -35,7 +35,10 @@ var postRequestSettings = {
 const matches = new Vue({
     el: "#match_container",
     data: {
-        matches: []
+        matches: [],
+        ALEWIN: 1,
+        DRAW: 0,
+        CHALLENGERWIN: 2
     }
 });
 
