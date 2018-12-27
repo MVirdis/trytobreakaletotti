@@ -35,7 +35,7 @@
         <!-- (5) -->
         <div id="match_container">
             <div class="animated fadeInDown scontro" v-for="match in matches">
-                <h2>Ale Totti <span class="versus">vs</span> {{match.challenger}} </h2>
+                <h2>Ale Totti <span class="versus">vs</span> <span :class="{striked: match.result==ALEWIN, green: match.result==CHALLENGERWIN}">{{match.challenger}}</span> </h2>
                 <h3 class="versus" v-if="match.result == null">Da combattersi il giorno:</h3>
                 <h3 class="versus" v-else>Combattuto il giorno:</h3>
                 <h3>{{match.date}} <span class="versus">alle ore</span> {{match.time}} </h3>
@@ -70,7 +70,12 @@
 (3): This script adds the VueJS framework to the app.
 (4): This script exposes various functions and objects to retrieve data. See
      that file for more information
-(5): Space for all the future and past matches
+(5): Space for all the future and past matches.
+     The : before the class attribute tells VueJS that the attribute value is JS
+     instead of HTML; in this case we pass in a JS object which has possible
+     class values as object properties (e.g. striked, green) each of which has
+     a boolean expression that if evaluates true, gives that HTML element that
+     class.
 (6): Space for the past matches container
 (7): Space for footer
 -->
