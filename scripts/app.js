@@ -7,6 +7,8 @@
 **      * date: the simple date in the format "yyyy-mm-dd"
 **      * time: the hour of the match
 **      * place: where it will be(or has been) disputed
+**      * result: it equals null if the match is to be disputed or a constant
+**          value (see below the constants) to indicate match result
 **      To use this data (for example in index.html) iterate over the matches
 **      array from an element with id match_container (IMPORTANT), for example:
 **      <div id="match_container">
@@ -19,7 +21,7 @@
 const ALEWIN = 1;
 const DRAW = 0;
 const CHALLENGERWIN = 2;
-const REQUESTURL = "http://localhost/php/request-handler.php";
+const REQUESTURL = "/php/request-handler.php";
 
 var postRequestSettings = {
     mode: 'no-cors',
