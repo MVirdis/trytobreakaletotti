@@ -7,6 +7,7 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/animate.min.css"/>
     <title>Try to Break Ale Totti - Team Totti</title>
     <!-- (2) -->
     <script src="./sw.js"></script>
@@ -19,7 +20,7 @@
         </div>
         <h1>Prossimo Scontro</h1>
         <h1>V <span class="smaller">giorni</span> III <span class="smaller">ore</span> X <span class="smaller">minuti</span></h1>
-        <div id="prenotazione_incontro">
+        <div id="prenotazione_incontro" class="" >
             <button id="prenota" onclick="show()">Prenota il tuo incontro</button>
             <input id="nome_combattente" name="nickname" type="text" placeholder="Nome di battaglia"></input>
             <input id="nome" name="name" type="text" placeholder="Nome"></input>
@@ -33,7 +34,7 @@
         <hr>
         <!-- (5) -->
         <div id="match_container">
-            <div class="scontro" v-for="match in matches">
+            <div class="animated fadeInDown scontro" v-for="match in matches">
                 <h2>Ale Totti <span class="versus">vs</span> {{match.challenger}} </h2>
                 <h3 class="versus" v-if="match.result == null">Da combattersi il giorno:</h3>
                 <h3 class="versus" v-else>Combattuto il giorno:</h3>
