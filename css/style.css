@@ -75,11 +75,12 @@ button{
 }
 
 .striked {
-    color: #ff6874 !important;
+    color: #ff6874;
+    text-decoration: line-through;
 }
 
 .green {
-    color: #82ff76 !important;
+    color: #82ff76;
 }
 
 /* IDS */
