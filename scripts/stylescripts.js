@@ -5,7 +5,7 @@ var nomeCombattente = document.getElementById('nome_combattente');
 var nome = document.getElementById('nome');
 var cognome = document.getElementById('cognome');
 var mail = document.getElementById('mail');
-var bloccoAnimato = document.getElementsById('animazione');
+var bloccoAnimato = document.getElementById('animazione');
 
 var requestFields = [nomeCombattente, nome, cognome, mail];
 
