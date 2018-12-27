@@ -5,6 +5,7 @@ var nomeCombattente = document.getElementById('nome_combattente');
 var nome = document.getElementById('nome');
 var cognome = document.getElementById('cognome');
 var mail = document.getElementById('mail');
+var bloccoAnimato = document.getElementsById('animazione');
 
 var requestFields = [nomeCombattente, nome, cognome, mail];
 
@@ -28,4 +29,5 @@ function show() {
     pulsantePrenota.style.visibility = "hidden";
     pulsantePrenota.style.height = "0";
     blocco.style.height = "250px";
+    animazione.setAttribute('class', 'animated fadeIn');
 }
