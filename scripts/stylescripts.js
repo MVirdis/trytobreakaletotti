@@ -21,6 +21,7 @@ function hide() {
     requestFields.forEach(function(field) { // Resets all input fields
         field.value = "";
     });
+    animazione.setAttribute('class', '');
 }
 
 function show() {
