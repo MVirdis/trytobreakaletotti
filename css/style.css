@@ -45,6 +45,10 @@ button{
     outline: 0;
 }
 
+hr{
+    margin-top: 40px!important;
+}
+
 /* Classi */
 
 .smaller{
