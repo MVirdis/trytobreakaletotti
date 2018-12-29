@@ -54,12 +54,14 @@ EOT;
             SELECT *
             FROM challenge C
             WHERE C.date > CURRENT_DATE OR
-                (C.date = CURRENT_DATE AND C.time >= CURRENT_TIME);
+                (C.date = CURRENT_DATE AND C.time >= CURRENT_TIME)
+            ORDER BY C.date DESC, C.time DESC;
 EOT;
         else
             $query = <<<EOT
             SELECT *
-            FROM challenge C;
+            FROM challenge C
+            ORDER BY C.date DESC, C.time DESC;
 EOT;
         $result = $dbmanager->performQuery($query);
         $dbmanager->closeConnection();
