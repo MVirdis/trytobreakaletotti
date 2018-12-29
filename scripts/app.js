@@ -56,6 +56,25 @@ const matches = new Vue({
 var correctFormFlag = false;
 function formCheck() {
     correctFormFlag = true;
+    if (!(/^\s*[A-Za-z\s]+\s*$/.test(nome.value))) {
+        correctFormFlag = false;
+        errorText.innerHTML = "Errore: il nome dev'essere composto di sole "+
+            "lettere";
+    }
+    if (!(/^\s*[A-Za-z\s]+\s*$/.test(cognome.value))) {
+        correctFormFlag = false;
+        errorText.innerHTML = "Errore: il cognome dev'essere composto di sole "+
+            "lettere";
+    }
+    if (!(/^\s*[A-Za-z\s]+[A-Za-z0-9_-\s]*\s*$/.test(nomeCombattente.value))) {
+        correctFormFlag = false;
+        errorText.innerHTML = "Errore: il nome da combattente deve iniziare "+
+            "con una lettera e può contenere lettere, numeri, _ -";
+    }
+    if (!(/^\s*[A-Za-z\.0-9_-]+@[a-z\.]+\s*$/.test(mail.value))) {
+        correctFormFlag = false;
+        errorText.innerHTML = "Errore: l'email non è in un formato valido";
+    }
     requestFields.forEach(function(element){
         if (/^\s*$/.test(element.value)) {
             correctFormFlag = false;
