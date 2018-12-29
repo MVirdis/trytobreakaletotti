@@ -106,13 +106,14 @@ button{
 .ancora{
     float: right;
     text-decoration: none;
-    color: white;
+    color: #cfcfcf;
     line-height: 60px;
     font-size: 20px;
+
 }
 
 .ancora:hover{
-    color: #bcbcbc;
+    color: #fdfdfd;
 }
 
 /* IDS */
