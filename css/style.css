@@ -274,21 +274,12 @@ hr{
 }
 
 #tottiText{
-    color: #e8e8e8;
-    font-size: 25px;
-    margin-top: 20px;
-    opacity: 0;
-    transition: opacity 0.5s;
-    width: 480px;
-}
-
-#tottiText{
     color: #cecece;
     font-size: 25px;
     margin-top: 20px;
     opacity: 0;
     transition: opacity 0.5s;
-    transition-delay: 0.7s;
+    width: 480px;
 }
 
 #close_div{
@@ -312,7 +303,6 @@ hr{
 #ancora:hover{
     color: #fdfdfd;
 }
-
 
 /* ALTRO */
 
