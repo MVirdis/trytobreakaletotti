@@ -121,6 +121,16 @@ hr{
     color: #fdfdfd;
 }
 
+.titolo{
+    color: white;
+    font-size: 35px;
+}
+
+.titolo_2{
+    font-size: 30px;
+    color: #ce7771;
+}
+
 /* IDS */
 #main_container{
     width: 960px;
@@ -285,7 +295,7 @@ hr{
 }
 
 #tottiText{
-    color: #e8e8e8;
+    color: #cecece;
     font-size: 25px;
     margin-top: 20px;
     opacity: 0;
