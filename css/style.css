@@ -190,6 +190,7 @@ hr{
     color: white;
     cursor: pointer;
     margin-bottom: 10px;
+    transition: background-color 300ms;
 }
 
 #prenota{
@@ -202,10 +203,12 @@ hr{
     cursor: pointer;
     margin-bottom: 10px;
     visibility: visible;
+    transition: background-color 300ms;
 }
 
 #prenota:hover{
     background-color: #4f4f4f;
+    transition: background-color 300ms;
 }
 
 #prenota:disabled{
@@ -216,6 +219,7 @@ hr{
 
 #invia_richiesta:hover{
     background-color: #4f4f4f;
+    transition: background-color 300ms;
 }
 
 #prenotazione_incontro a{
