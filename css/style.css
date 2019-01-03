@@ -8,6 +8,7 @@ h1{
     color: #e8e8e8;
     font-size: 45px;
     margin-top: 10px;
+    border: 0;
 }
 
 h2{
@@ -113,7 +114,7 @@ hr{
     color: #cfcfcf;
     line-height: 60px;
     font-size: 20px;
-
+    cursor: pointer;
 }
 
 .ancora:hover{
@@ -130,7 +131,9 @@ hr{
 #container_ale{
     background-image: linear-gradient(to right, #272727, #434343, #272727);
     width: 100%;
+    float: left;
     height: 450px;
+    transition: width 1s;
 }
 
 #foto_ale{
@@ -261,6 +264,14 @@ hr{
     color: #ac2d06;
     text-align: center;
     margin-bottom: 5px;
+}
+
+#whoistotti{
+    height: 450px;
+    float: left;
+    width: 0%;
+    background-color: #272727;
+    transition: width 1s;
 }
 
 /* ALTRO */

@@ -48,10 +48,6 @@ const matches = new Vue({
     function(response) {
         response.json().then(function(obj) {
             console.log(obj);
-            obj.data.forEach(function(match) {
-                match.date = dateToRoman(match.date);
-                match.time = timeToRoman(match.time);
-            });
             matches.matches = obj.data;
         });
     });
@@ -120,10 +116,6 @@ document.getElementById("past_matches_button").addEventListener("click",function
     function(response) {
         response.json().then(function(obj) {
             console.log(obj);
-            obj.data.forEach(function(match) {
-                match.date = dateToRoman(match.date);
-                match.time = timeToRoman(match.time);
-            });
             matches.matches = obj.data;
         });
     });
@@ -131,45 +123,3 @@ document.getElementById("past_matches_button").addEventListener("click",function
         (showingPastMatches ? "Mostra " : "Nascondi ") + "incontri passati";
     showingPastMatches = !showingPastMatches;
 });
-
-function timeToRoman(time) {
-    var regex = /^\s*([0-9]+):([0-9]+):([0-9]+)\s*$/g;
-    var timeParts = regex.exec(time);
-    var romanTime = "";
-    romanTime += numToRoman(Number(timeParts[1]));
-    if (Number(timeParts[2]) != 0) {
-        romanTime += " : ";
-        romanTime += numToRoman(Number(timeParts[2]));
-    }
-    if (Number(timeParts[2]) != 0 && Number(timeParts[3]) != 0) {
-        romanTime += " : ";
-        romanTime += numToRoman(Number(timeParts[3]));
-    }
-    return romanTime;
-}
-
-function dateToRoman(date) {
-    var regex = /^\s*([0-9]+)-([0-9]+)-([0-9]+)\s*$/g;
-    var dateParts = regex.exec(date);
-    var romanDate = "";
-    romanDate += numToRoman(Number(dateParts[3]));
-    romanDate += " / ";
-    romanDate += numToRoman(Number(dateParts[2]));
-    romanDate += " / ";
-    romanDate += numToRoman(Number(dateParts[1]));
-    return romanDate;
-}
-
-function numToRoman(num) {
-    if (isNaN(num))
-        return NaN;
-    var digits = String(+num).split(""),
-        key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
-               "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
-               "","I","II","III","IV","V","VI","VII","VIII","IX"],
-        roman = "",
-        i = 3;
-    while (i--)
-        roman = (key[+digits.pop() + (i * 10)] || "") + roman;
-    return Array(+digits.join("") + 1).join("M") + roman;
-}

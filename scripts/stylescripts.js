@@ -32,3 +32,21 @@ function show() {
     blocco.style.height = "250px";
     animazione.setAttribute('class', 'animated fadeIn');
 }
+
+var divScomparsa = document.getElementById('whoistotti');
+var divTotti = document.getElementById('container_ale');
+var tottiButton = document.getElementsByClassName('ancora');
+var visibile = 1;
+
+function showHideText(){
+    if (visibile == 0) {
+        divScomparsa.style.width = "0%";
+        divTotti.style.width = "100%";
+        visibile = 1;
+    }
+    else if (visibile == 1) {
+        divScomparsa.style.width = "50%";
+        divTotti.style.width = "50%";
+        visibile = 0;
+    }
+}
