@@ -35,7 +35,7 @@ function show() {
 
 var divScomparsa = document.getElementById('whoistotti');
 var divTotti = document.getElementById('container_ale');
-var tottiButton = document.getElementsByClassName('ancora');
+var tottiButton = document.getElementById('ancora')
 var visibile = 1;
 var testoTotti = document.getElementById('tottiText');
 
@@ -45,11 +45,13 @@ function showHideText(){
         divTotti.style.width = "100%";
         visibile = 1;
         testoTotti.style.opacity = 0;
+        tottiButton.innerHTML = "Chi è AleTotti?";
     }
     else if (visibile == 1) {
         divScomparsa.style.width = "50%";
         divTotti.style.width = "50%";
         visibile = 0;
         testoTotti.style.opacity = 0.9;
+        tottiButton.innerHTML = "Chiudi";
     }
 }

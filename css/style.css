@@ -108,18 +108,6 @@ hr{
     margin-top: 4px;
 }
 
-.ancora{
-    float: right;
-    text-decoration: none;
-    color: #cfcfcf;
-    line-height: 60px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.ancora:hover{
-    color: #fdfdfd;
-}
 
 .titolo{
     color: white;
@@ -310,6 +298,20 @@ hr{
     color: #717171;
     margin-top: 10px;
 }
+
+#ancora{
+    float: right;
+    text-decoration: none;
+    color: #cfcfcf;
+    line-height: 60px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#ancora:hover{
+    color: #fdfdfd;
+}
+
 
 /* ALTRO */
 
