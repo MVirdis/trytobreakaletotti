@@ -22,6 +22,7 @@ const ALEWIN = 1;
 const DRAW = 0;
 const CHALLENGERWIN = 2;
 const REQUESTURL = "/php/request-handler.php";
+const MAX_CHALLENGER_NAME_LEN = 20;
 
 var postRequestSettings = {
     mode: 'no-cors',
@@ -78,6 +79,11 @@ function formCheck() {
     if (!(/^\s*[A-Za-z\.0-9_-]+@[a-z\.]+\s*$/.test(mail.value))) {
         correctFormFlag = false;
         errorText.innerHTML = "Errore: l'email non è in un formato valido";
+    }
+    if (nomeCombattente.value.length > MAX_CHALLENGER_NAME_LEN) {
+        correctFormFlag = false;
+        errorText.innerHTML = "Errore: nome combattente di max " +
+            MAX_CHALLENGER_NAME_LEN + " caratteri";
     }
     requestFields.forEach(function(element){
         if (/^\s*$/.test(element.value)) {
