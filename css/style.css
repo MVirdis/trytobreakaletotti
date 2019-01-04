@@ -283,7 +283,7 @@ hr{
     margin-top: 20px;
     opacity: 0;
     transition: opacity 0.5s;
-    width: 480px;
+    width: 380px;
 }
 
 #close_div{
@@ -316,4 +316,35 @@ hr{
 }
 
 
-/* MOBILE STYLING */
+/* ----- MEDIA STYLING ----- */
+
+/* TABLET OPTIMIZATION */
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    body{
+        width: 100%;
+    }
+
+    #main_container{
+        width: 100%;
+        min-height: 1500px;
+        margin: 0 auto;
+    }
+
+    .navigazione{
+        width: 80%;
+        height: 60px;
+        margin: 0 auto;
+        background-image: linear-gradient(to right, #272727, #303030, #272727);
+    }
+
+    #tottiText{
+        font-size: 25px;
+
+    }
+
+    hr{
+        width: 100%;
+    }
+
+}
