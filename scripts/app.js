@@ -43,12 +43,106 @@ const matches = new Vue({
     }
 });
 
-(function() { // On start fetch upcoming challenges
+const countdown = new Vue({
+    el: "#next_match_countdown",
+    data: {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+    },
+    computed: {
+        daysUntilNext: function() {
+            if (this.days == 0)
+                return 'O';
+            return numToRoman(this.days);
+        },
+        hoursUntilNext: function() {
+            if (this.hours == 0)
+                return 'O';
+            return numToRoman(this.hours);
+        },
+        minutesUntilNext: function() {
+            if (this.minutes == 0)
+                return 'O';
+            return numToRoman(this.minutes);
+        }
+    }
+});
+
+var decr = function() {
+    if (countdown.seconds > 0) {
+        countdown.seconds--;
+    } else if (countdown.seconds == 0) {
+        if (countdown.minutes > 0) {
+            countdown.seconds = 59;
+            countdown.minutes--;
+        } else if (countdown.minutes == 0) {
+            if (countdown.hours > 0) {
+                countdown.hours--;
+                countdown.minutes = 59;
+                countdown.seconds = 59;
+            } else if (countdown.hours == 0) {
+                if (countdown.days > 0) {
+                    countdown.seconds = 59;
+                    countdown.minutes = 59;
+                    countdown.hours = 23;
+                    countdown.days--;
+                } else if (countdown.days == 0) {} // if all 0 nothing to do
+            }
+        }
+    }
+};
+
+function daysOfMonth(month, year) {
+    var days = 0;
+    switch (month) { // months 0 based - january = 0
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            days = 31;
+        break;
+        case 4: case 6: case 9: case 11:
+            days = 30;
+        break;
+        case 2:
+            if ((year%4 == 0) &&
+                ((year%100 != 0) ||
+                 (year%400 == 0))
+               )
+                days = 29;
+            else
+                days = 28;
+        break;
+    }
+    return days;
+}
+
+function setInitialCountdown(nextMatch) {
+    var nextMatchDate = new Date(nextMatch.date + " " + nextMatch.time);
+    var result = new Date();
+    result.setTime(nextMatchDate - Date.now());
+    console.log(result);
+    var cumDays = 0;
+    for(var i=0; i<result.getMonth(); ++i) {
+        cumDays += daysOfMonth(i+1, result.getFullYear());
+    }
+    console.log((result.getDate() + result.getMonth()*cumDays  -
+                 (result.getMonth() == 0 ? 0 : 1)) + " days " +
+            result.getHours() + " hours " + result.getMinutes() + " minutes");
+
+    countdown.days = result.getDate() + result.getMonth()*cumDays -
+               (result.getMonth() == 0 ? 0 : 1);
+    countdown.hours = result.getHours();
+    countdown.minutes = result.getMinutes();
+    countdown.seconds = 59 - (new Date()).getSeconds();
+}
+
+(function() { // On start
     postRequestSettings.body = 'action=get&target=challenge&upcoming=true';
     fetch(REQUESTURL, postRequestSettings).then(
     function(response) {
         response.json().then(function(obj) {
-            console.log(obj);
+            setInitialCountdown(obj.data[obj.data.length - 1]);
+            setInterval(decr, 1000);
             obj.data.forEach(function(match) {
                 match.date = dateToRoman(match.date);
                 match.time = timeToRoman(match.time);
