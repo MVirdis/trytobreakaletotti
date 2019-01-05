@@ -316,6 +316,10 @@ hr{
     visibility: hidden;
 }
 
+#next_match_countdown{
+    font-size: 30px;
+}
+
 .centra{
     visibility: hidden;
 }
@@ -336,48 +340,67 @@ hr{
     body{
         width: 100%;
     }
-
-    #main_container{
+    hr{
         width: 100%;
-        min-height: 1500px;
-        margin: 0 auto;
     }
-
     .navigazione{
         width: 70%;
         height: 60px;
         margin: 0 auto;
         background-image: linear-gradient(to right, #272727, #303030, #272727);
     }
-
-    #tottiText{
-        font-size: 24px;
-
-    }
-
-    hr{
-        width: 100%;
-    }
-}
-
-/* SMARTPOHNES OPTIMIZATION */
-@media only screen and (min-device-width: 300px) and (max-device-width: 600px){
     #main_container{
         width: 100%;
         min-height: 1500px;
         margin: 0 auto;
     }
+    #tottiText{
+        font-size: 24px;
+
+    }
+}
+
+/* SMARTPOHNES OPTIMIZATION */
+@media only screen and (min-device-width: 300px) and (max-device-width: 600px){
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 30px!important;
+    }
+    h3{
+        font-size: 18px;
+    }
     .navigazione{
         width: 80%;
-    }
-    #ancora{
-        visibility: hidden;
     }
     .logo{
         display: block!important;
         margin-left: auto;
         margin-right: auto;
         float: none;
+    }
+    .centra{
+        text-align: center;
+        color: #bababa;
+        font-size: 20px;
+        margin-top: 10px;
+        visibility: visible;
+    }
+    .versus{
+        color: grey;
+        font-size: 20px;
+    }
+    .smaller{
+        font-size: 20px;
+    }
+    #main_container{
+        width: 100%;
+        min-height: 1500px;
+        margin: 0 auto;
+    }
+    #ancora{
+        visibility: hidden;
     }
     #container_totti_mobile{
         display: block;
@@ -391,24 +414,8 @@ hr{
         font-size: 40px;
         visibility: visible;
     }
-    .centra{
-        text-align: center;
-        color: #bababa;
-        font-size: 20px;
-        margin-top: 10px;
-        visibility: visible;
+    #next_match_countdown{
+        font-size: 25px;
     }
-    h1{
-        font-size: 40px;
-    }
-    h2{
-        font-size: 30px!important;
-    }
-    h3{
-        font-size: 18px;
-    }
-    .versus{
-        color: grey;
-        font-size: 20px;
-    }
+
 }
