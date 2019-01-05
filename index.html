@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <!-- (1) -->
     <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
     <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css"/>
@@ -40,6 +41,20 @@
             </p>
         </div>
         <div class="clearfix"></div>
+        <!-- BLOCK ONLY VISIBLE IN MOBILE -->
+        <div id="container_totti_mobile">
+            <h4 id="centra_h4">Chi è AleTotti?</h4>
+            <p class="centra">
+                Ale Totti è un onorevole garzone che ha lanciato una sfida a chiunque
+                sia abbastanza coraggioso da raccoglierla:<br>
+                un match a braccio di ferro.<br>
+                Prenota ora il tuo scontro compilando il form sottostante.
+                Il nostro Team provvederà al più presto a fissarti un incontro.<br>
+                Riceverai una mail contenente l'orario e il luogo dello scontro.<br>
+                <span class="titolo_2">Sarai abbastanza degno per batterlo?</span>
+            </p>
+        </div>
+        <!-- '''''''''''''''''''''''''''' -->
         <h1>Prossimo Scontro</h1>
         <h1 id="next_match_countdown">{{daysUntilNext}} <span class="smaller">giorni</span> {{hoursUntilNext}} <span class="smaller">ore</span> {{minutesUntilNext}} <span class="smaller">minuti</span></h1>
         <div id="prenotazione_incontro">
