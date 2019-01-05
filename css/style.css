@@ -351,7 +351,7 @@ hr{
     }
 
     #tottiText{
-        font-size: 25px;
+        font-size: 24px;
 
     }
 
@@ -397,5 +397,18 @@ hr{
         font-size: 20px;
         margin-top: 10px;
         visibility: visible;
+    }
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 30px!important;
+    }
+    h3{
+        font-size: 18px;
+    }
+    .versus{
+        color: grey;
+        font-size: 20px;
     }
 }
