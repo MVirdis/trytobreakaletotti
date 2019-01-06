@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./css/login_style.css">
+        <title>Login</title>
+    </head>
+    <body>
+        <h1>If you're part of Team Totti, please login.<br>
+            If not, GTFO.
+        </h1>
+        <form action="./php/login.php" method="post" encoding="application/x-www-form-urlencoded">
+            <label>Nome Utente:</label>
+            <input id="username" type="text" name="username" placeholder="Type here.." required>
+            <label>Password:</label>
+            <input id="password" type="password" name="password" placeholder="Type here.." required>
+            <button type="submit" name="button">Login</button>
+        </form>
+    </body>
+</html>
