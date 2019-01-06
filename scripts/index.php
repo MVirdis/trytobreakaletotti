@@ -1,4 +1,4 @@
 <?php
-    header('location: ./../index.html');
+    header('location: ./../');
     exit;
 ?>
