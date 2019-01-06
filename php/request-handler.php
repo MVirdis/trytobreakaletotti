@@ -80,6 +80,13 @@ EOT;
             echo "Successfully deleted old request";
 
         $dbmanager->closeConnection();
+        echo <<<EOT
+        <script>
+            setTimeout(function() {
+                window.location.replace("/php/gestione.php");
+            }, 1500);
+        </script>
+EOT;
         exit;
     }
 
