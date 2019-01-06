@@ -31,22 +31,26 @@ EOT;
                 for ($i = 0; $i < $tot; $i++) {
                     $row = $res->fetch_assoc();
         ?>
-                    <div class="request-field" v-for="request in requests">
+                    <div class="request-field">
                         <h3>Nome: <?php echo $row['name']; ?></h3>
                         <h3>Cognome: <?php echo $row['surname']; ?></h3>
                         <h3>Nome Combattente: <?php echo $row['nickname']; ?></h3>
                         <h3>E-mail: <?php echo $row['email']; ?></h3>
-                        <form>
+                        <form action="./request-handler.php" enctype="application/x-www-form-urlencoded" method="post">
+                            <input type="hidden" name="challenger" value="<?php echo $row['nickname']; ?>">
+                            <input type="hidden" name="old_req_id" value="<?php echo $row['id']; ?>">
+                            <input type="hidden" name="action" value="set">
+                            <input type="hidden" name="target" value="challenge">
                             <label>Luogo:</label>
-                            <input id="luogo" type="text" name="luogo">
+                            <input id="luogo" type="text" name="place">
                             <br>
                             <br>
                             <label>Data:</label>
-                            <input id="data-match" type="text" name="data">
+                            <input id="data-match" type="text" name="date">
                             <br>
                             <br>
                             <label>Ora:</label>
-                            <input id="orario" type="text" name="ora">
+                            <input id="orario" type="text" name="time">
                             <br>
                             <br>
                             <button type="submit" name="insert-button">Inserisci</button>
