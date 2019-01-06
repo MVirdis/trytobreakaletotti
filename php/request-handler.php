@@ -43,6 +43,46 @@ EOT;
         send();
     }
 
+    if ($_POST['action'] == 'set' && $_POST['target'] == 'challenge') {
+        if (!isset($_POST['challenger']) || !isset($_POST['place']) ||
+            !isset($_POST['date']) || !isset($_POST['time']) ||
+            !isset($_POST['old_req_id'])) {
+            echo "Error: missing one of mandatory parameters ".
+                 "for setting a challenge [challenger, place, date, time, old_req_id]";
+            exit;
+        }
+        $safe_challenger = $dbmanager->sqlInjectionFilter($_POST['challenger']);
+        $safe_place = $dbmanager->sqlInjectionFilter($_POST['place']);
+        $safe_date = $dbmanager->sqlInjectionFilter($_POST['date']);
+        $safe_time = $dbmanager->sqlInjectionFilter($_POST['time']);
+        $safe_old_id = $dbmanager->sqlInjectionFilter($_POST['old_req_id']);
+        $query = <<<EOT
+        INSERT INTO challenge(place, date, challenger, time)
+        VALUES ("$safe_place", "$safe_date", "$safe_challenger", "$safe_time");
+EOT;
+        $result = $dbmanager->performQuery($query);
+        if (!$result)
+            echo "Error while performing query<br>";
+        else {
+            echo "Successfully executed SET on request<br>";
+        }
+
+        $query = <<<EOT
+            DELETE R.*
+            FROM request R
+            WHERE R.id=$safe_old_id
+EOT;
+
+        $result = $dbmanager->performQuery($query);
+        if (!$result)
+            echo "Error while deleting request";
+        else
+            echo "Successfully deleted old request";
+
+        $dbmanager->closeConnection();
+        exit;
+    }
+
     if ($_POST['action'] == 'get' && $_POST['target'] == 'challenge') {
         if (!isset($_POST['upcoming'])) {
             $response->message = "Error: missing upcoming parameter.";
