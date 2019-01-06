@@ -1,3 +1,11 @@
+<?php
+    if (!isset($_SESSION))
+        session_start();
+    if (!isset($_SESSION['userID'])) {
+        header('location: ./../login.html');
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
     <head>
